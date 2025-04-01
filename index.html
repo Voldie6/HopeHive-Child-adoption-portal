@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HopeHives - Child Adoption Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">HopeHives</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#children">Children</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Give a Child the Gift of Family</h1>
+            <p>Help us connect loving families with children needing permanent homes</p>
+        </div>
+    </section>
+
+    <section class="children-grid" id="children">
+        <h2 class="grid-title">Children Waiting for a Home</h2>
+        <div class="grid-container">
+            <!-- Child cards would be dynamically generated from database -->
+            <div class="child-card">
+                <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/portait-of-young-indian-girl-leblond-catherine.jpg">
+                <div class="child-info">
+                    <h3 class="child-name">priya, 5 years</h3>
+                    <p>Loves drawing and dancing. Looking for a loving family in india.</p> <div class="child-card">
+                        <img src="https://img.mensxp.com/media/content/2019/Sep/single-fatherhood-stereotypes-this-indian-man-broke-by-adopting-a-child-with-down-syndrome-1400x653-1568115424.jpg?w=1100&h=513&cc=1">
+                        <div class="child-info">
+                            <h3 class="child-name">karim, 3 years</h3>
+                            <p>Loves playing and singing. Looking for a loving family in india.</p>
+                </div>
+            </div>
+            <!-- More child cards -->
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-form">
+            <h2>Start Your Adoption Journey</h2>
+            <form id="adoptionForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('adoptionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will contact you shortly.');
+            this.reset();
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                document.querySelector('.navbar').style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Simple fade-in animation for cards
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.child-card').forEach((card) => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
