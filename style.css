@@ -1,0 +1,184 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #fff5f5;
+    color: #333;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 5%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: #ff6b6b;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff6b6b;
+}
+
+ /* Modified Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(255, 107, 107, 0.1), 
+                        rgba(255, 255, 255, 0.3)), /* Adjusted overlay for better contrast */
+                        url('https://www.vidhikarya.com/images/blog_images/adopt-a-child-in-india.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Creates parallax effect */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.95); /* More opaque background */
+            padding: 3rem;
+            border-radius: 15px;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Added depth */
+        }
+
+.hero h1 {
+    font-size: 3rem;
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+}
+
+/* Children Grid */
+.children-grid {
+    padding: 5rem 5%;
+    background: #fff;
+}
+
+.grid-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #ff6b6b;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.child-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.child-card:hover {
+    transform: translateY(-10px);
+}
+
+.child-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.child-info {
+    padding: 1.5rem;
+}
+
+.child-name {
+    color: #ff6b6b;
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Form */
+.contact-section {
+    height: 100vh;
+    padding: 5rem 5%;
+    background: linear-gradient(rgba(255, 107, 107, 0.5), 
+                        rgba(255, 255, 255, 0.3)), /* Adjusted overlay for better contrast */
+                        url(https://images.pond5.com/close-pensive-little-girl-african-footage-165825894_iconl.jpeg);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: peachpuff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid peru;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background: #ff6b6b;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #ff5252;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
